@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+<div class="card">
+    <div class="search">
+        <input type="text" placeholder="Enter city name" spellcheck="false">
+        <button><img src="search1.jpg" width="30",height="30"></button>
+    
+    </div><div class="Weather">
+<img src="rain.jfif" height="200px" class="weather-icon">
+<h1 class="temp">22°c</h1>
+<h2 class="city">New York</h2>
+<div class="details">
+    <div class="col">
+<img src="humidity 2.png" height="50px" >
+    <div>
+    <p class="humidity" style="margin-left: -105px">50%</p>
+    <p  style="margin-left: -105px">Humidity</p>
+    </div>
+    <div class="col">
+        <img src="wind.png" height="50px">
+            <div>
+            <p class="wind">15 km/h</p>
+            <p>Wind Speed</p>
+            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+<script>
+  
+  const apikey = "2c6c5929f126c16bd08c0375516c529e";
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=${apikey}`;
+  
+
+  async function checkWeather(city) {
+    const response = await fetch(`${apiUrl}&q=${city}`);
+    const data = await response.json();
+    console.log(data);
+
+    // Update the HTML elements with the weather data
+    document.querySelector('.temp').textContent = `${data.main.temp}°c`;
+    document.querySelector('.city').textContent = data.name;
+    document.querySelector('.humidity').textContent = `${data.main.humidity}%`;
+    document.querySelector('.wind').textContent = `${data.wind.speed} km/h`;
+  }
+
+  document.querySelector('button').addEventListener('click', () => {
+    const city = document.querySelector('input').value;
+    checkWeather(city);
+  });
+
+
+
+</script>
+</html>

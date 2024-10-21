@@ -1,0 +1,83 @@
+.card {
+    width: 70%;
+    max-width: 470px;
+     /* Add more colors if needed */
+    color: rgb(10, 131, 131);
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+    margin-top: 25px;
+    height: auto;
+    border: none;
+    background-color: rgb(181, 178, 197);
+    
+}
+body{
+    background-color: rgb(5, 1, 59);
+    background-image: url(weather6.jpg);
+
+}
+.search{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.search input{
+    border:0;
+    outline:0;
+    background: #ebfffc;
+    color:#555;
+    padding:10px 25px;
+    height:40px;
+    border-radius: 30px;
+    flex:1;
+    margin-right: 16px;
+    font-size:18px;
+
+}
+.weather-icon {
+    height: 250px;
+   
+    border: none;
+    border-radius: none;
+    padding-top: 20px;
+    padding-left: -20px;
+    mix-blend-mode: multiply;
+    margin-top: -25px;
+}
+.temp{
+   font-size: 70px;
+   color: #19191a;
+   margin-top: -20px;
+}
+.city{
+    font-size: 50px;
+    color: #0d1a24;
+    margin-top: -40px;
+}
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+    margin-top: -40px;
+
+}
+.col img{
+    mix-blend-mode: multiply;
+}
+
+
+.col p {
+    margin: 0; /* Remove default margin around <p> tags */
+    padding: 0; /* Remove default padding around <p> tags */
+    line-height: 1.2; /* Adjust line height if needed */
+    text-align: left;
+    color: #02022b;
+}
+.humidity1{
+    mix-blend-mode: multiply;
+}
